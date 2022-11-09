@@ -43,11 +43,6 @@
                                             <p class="text-muted">{{ auth()->user()->vehicle_name }}</p>
                                         </div>
                                     </div>
-                                    <div class="d-flex justify-content-start">
-                                        <a href="#!"><i class="fab fa-facebook-f fa-lg me-3"></i></a>
-                                        <a href="#!"><i class="fab fa-twitter fa-lg me-3"></i></a>
-                                        <a href="#!"><i class="fab fa-instagram fa-lg"></i></a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
