@@ -8,12 +8,20 @@
             <ul class="navbar-nav mb-2 mb-lg-0">
                 @auth
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Home</a>
+                        <a class="nav-link
+                        @if (Request::is('home')) active @endif"
+                            href="/home">Home</a>
                     </li>
+                    @if (session()->get('user_type') == 'admin')
+                        <li class="nav-item
+                        @if (Request::is('customers')) active @endif">
+                            <a class="nav-link" href="/customers">Customers</a>
+                        </li>
+                    @endif
                 @endauth
                 @guest
                     <li class="nav-item
-                    @if (Request::is('login')) active @endif"">
+                    @if (Request::is('login')) active @endif">
                         <a class="nav-link" href="/login">Login</a>
                     </li>
                     <li class="nav-item">

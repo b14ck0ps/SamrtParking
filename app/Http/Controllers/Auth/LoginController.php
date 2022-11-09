@@ -23,6 +23,7 @@ class LoginController extends Controller
             return back()->with('status', 'Invalid login details');
         }
 
+        session()->put('user_type', auth()->user()->type);
         if (auth()->user()->type == 'admin') {
             return redirect()->to('/admin');
         }

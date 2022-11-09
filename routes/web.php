@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegistrationController;
+use App\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,4 +38,8 @@ Route::group(['middleware' => 'auth'], function () {
         auth()->logout();
         return redirect()->to('/login');
     })->name('logout');
+});
+
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/customers', [CustomerController::class, 'index'])->name('customers');
 });
