@@ -36,13 +36,6 @@
                                             <p class="text-muted">{{ auth()->user()->phone }}</p>
                                         </div>
                                     </div>
-                                    <h6>Cars</h6>
-                                    <hr class="mt-0 mb-4">
-                                    <div class="row pt-1">
-                                        <div class="col-6 mb-3">
-                                            <p class="text-muted">{{ auth()->user()->vehicle_name }}</p>
-                                        </div>
-                                    </div>
                                     <div class="d-flex justify-content-start">
                                         <a href="#!"><i class="fab fa-facebook-f fa-lg me-3"></i></a>
                                         <a href="#!"><i class="fab fa-twitter fa-lg me-3"></i></a>
