@@ -13,7 +13,7 @@
                     <li><i class="fa-solid fa-money-check-dollar"></i> 40 Taka/Hour</li>
                     <li><i class="fa-solid fa-location-dot"></i> F1</li>
                 </ul>
-                <a href="#" class="btn btn-info">Reserve</a>
+                <a href="#" class="p-2 rounded text-decoration-none btn-info">Reserve</a>
             </div>
         </div>
         <div class="card m-5" style="width: 18rem;">
@@ -25,7 +25,7 @@
                     <li><i class="fa-solid fa-money-check-dollar"></i> 40 Taka/Hour</li>
                     <li><i class="fa-solid fa-location-dot"></i> F1</li>
                 </ul>
-                <a href="#" class="btn btn-info">Reserve</a>
+                <a href="#" class="p-2 rounded text-decoration-none btn-info">Reserve</a>
             </div>
         </div>
         <div class="card m-5" style="width: 18rem;">
@@ -37,7 +37,7 @@
                     <li><i class="fa-solid fa-money-check-dollar"></i> 40 Taka/Hour</li>
                     <li><i class="fa-solid fa-location-dot"></i> F1</li>
                 </ul>
-                <a href="#" class="btn btn-info">Reserve</a>
+                <a href="#" class="p-2 rounded text-decoration-none btn-info">Reserve</a>
             </div>
         </div>
         <div class="card m-5" style="width: 18rem;">
@@ -49,7 +49,7 @@
                     <li><i class="fa-solid fa-money-check-dollar"></i> 40 Taka/Hour</li>
                     <li><i class="fa-solid fa-location-dot"></i> F1</li>
                 </ul>
-                <a href="#" class="btn btn-info">Reserve</a>
+                <a href="#" class="p-2 rounded text-decoration-none btn-info">Reserve</a>
             </div>
         </div>
 
