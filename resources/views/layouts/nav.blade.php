@@ -7,15 +7,30 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarCenteredExample">
             <ul class="navbar-nav mb-2 mb-lg-0">
                 @auth
-                    <li class="nav-item">
-                        <a class="nav-link
+                    @if (session()->get('user_type') == 'customer')
+                        <li class="nav-item">
+                            <a class="nav-link
                         @if (Request::is('home')) active @endif"
-                            href="/home">Home</a>
-                    </li>
+                                href="/home">Home</a>
+                        </li>
+                    @endif
+                    @if (session()->get('user_type') == 'admin')
+                        <li class="nav-item">
+                            <a class="nav-link
+                        @if (Request::is('admin')) active @endif"
+                                href="/admin">Dashboard</a>
+                        </li>
+                    @endif
                     @if (session()->get('user_type') == 'admin')
                         <li class="nav-item
                         @if (Request::is('customers')) active @endif">
                             <a class="nav-link" href="/customers">Customers</a>
+                        </li>
+                    @endif
+                    @if (session()->get('user_type') == 'customer')
+                        <li class="nav-item
+                        @if (Request::is('park')) active @endif">
+                            <a class="nav-link" href="/park">Booking</a>
                         </li>
                     @endif
                 @endauth

@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegistrationController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\ParkControllerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,11 +29,9 @@ Route::group(['middleware' => 'guest'], function () {
 
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/home', function () {
-        return view('dashboards.customer');
-    })->name('home');
     Route::get('/logout', function () {
         auth()->logout();
+        session()->forget('user_type');
         return redirect()->to('/login');
     })->name('logout');
 });
@@ -42,4 +41,10 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin', function () {
         return view('dashboards.admin');
     })->name('admin');
+});
+Route::middleware(['auth', 'customer'])->group(function () {
+    Route::get('/park', [ParkControllerController::class, 'index'])->name('park');
+    Route::get('/home', function () {
+        return view('dashboards.customer');
+    })->name('home');
 });
