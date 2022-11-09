@@ -31,9 +31,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', function () {
         return view('dashboards.customer');
     })->name('home');
-    Route::get('/admin', function () {
-        return view('dashboards.admin');
-    })->name('admin');
     Route::get('/logout', function () {
         auth()->logout();
         return redirect()->to('/login');
@@ -42,4 +39,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/customers', [CustomerController::class, 'index'])->name('customers');
+    Route::get('/admin', function () {
+        return view('dashboards.admin');
+    })->name('admin');
 });
