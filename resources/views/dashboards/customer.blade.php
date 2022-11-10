@@ -19,8 +19,10 @@
                                     alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
                                 <h5>{{ auth()->user()->name }}</h5>
                                 <p>{{ auth()->user()->type }}</p>
-                                <a href="/logout" class="btn btn-outline-light btn-md">Logout</a>
-                                <i class="far fa-edit mb-5"></i>
+                                <div class="d-flex align-items-center justify-content-around">
+                                    <a href="/logout" class="btn btn-outline-light btn-md h-25">Logout</a>
+                                    <a class="mt-5" href="/edit"><i class="far fa-edit mb-5"></i></a>
+                                </div>
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body p-4">
