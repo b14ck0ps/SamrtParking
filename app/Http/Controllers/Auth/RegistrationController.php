@@ -34,6 +34,7 @@ class RegistrationController extends Controller
         ]);
 
         auth()->login($user);
+        session()->put('user_type', auth()->user()->type);
         if (auth()->user()->type == 'admin') {
             return redirect()->to('/admin');
         }
