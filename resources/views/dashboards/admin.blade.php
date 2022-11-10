@@ -9,6 +9,11 @@
     </style>
     <section class="vh-100" style="background-color: #f4f5f7;">
         <div class="container py-5 h-100">
+            @if (session('success'))
+                <div class="alert alert-success text-center">
+                    {{ session('success') }}
+                </div>
+            @endif
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col col-lg-8 mb-4 mb-lg-0">
                     <div class="card mb-3" style="border-radius: .5rem;">
@@ -19,8 +24,10 @@
                                     alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
                                 <h5>{{ auth()->user()->name }}</h5>
                                 <p>{{ auth()->user()->type }}</p>
-                                <a href="/logout" class="btn btn-outline-light btn-md">Logout</a>
-                                <i class="far fa-edit mb-5"></i>
+                                <div class="d-flex align-items-center justify-content-around">
+                                    <a href="/logout" class="btn btn-outline-light btn-md h-25">Logout</a>
+                                    <a class="mt-5" href="/edit"><i class="far fa-edit mb-5"></i></a>
+                                </div>
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body p-4">

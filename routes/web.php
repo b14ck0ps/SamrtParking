@@ -35,6 +35,8 @@ Route::group(['middleware' => 'auth'], function () {
         session()->forget('user_type');
         return redirect()->to('/login');
     })->name('logout');
+    Route::get('/edit', [ProfileController::class, 'Index'])->name('edit');
+    Route::post('/update', [ProfileController::class, 'update'])->name('update');
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
@@ -48,5 +50,4 @@ Route::middleware(['auth', 'customer'])->group(function () {
     Route::get('/home', function () {
         return view('dashboards.customer');
     })->name('home');
-    Route::get('/edit', [ProfileController::class, 'Index'])->name('edit');
 });
