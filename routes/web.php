@@ -51,4 +51,5 @@ Route::middleware(['auth', 'customer'])->group(function () {
     Route::get('/home', function () {
         return view('dashboards.customer');
     })->name('home');
+    Route::post('/book', [BookingsController::class, 'book'])->name('book');
 });
