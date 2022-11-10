@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegistrationController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\BookingsController;
+use App\Http\Controllers\CustomerProfileController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -48,8 +49,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
 });
 Route::middleware(['auth', 'customer'])->group(function () {
     Route::get('/park', [BookingsController::class, 'index'])->name('park');
-    Route::get('/home', function () {
-        return view('dashboards.customer');
-    })->name('home');
+    Route::get('/home', [CustomerProfileController::class, 'index'])->name('home');
     Route::post('/book', [BookingsController::class, 'book'])->name('book');
 });

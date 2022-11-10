@@ -44,13 +44,39 @@
                                                 <p class="text-muted">{{ auth()->user()->phone }}</p>
                                             </div>
                                         </div>
-                                        <h6>Cars</h6>
-                                        <hr class="mt-0 mb-4">
-                                        <div class="row pt-1">
-                                            <div class="col-6 mb-3">
-                                                <p class="text-muted">{{ auth()->user()->vehicle_name }}</p>
-                                            </div>
+                                        <div class="d-flex">
+                                            <h6 class="mr-3 font-weight-bold">Car</h6>
+                                            <p class="text-muted">{{ auth()->user()->vehicle_name }}</p>
                                         </div>
+                                        <!-----BookingsStart---->
+                                        @isset($bookings)
+                                            <div class="table-responsive mt-3">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">License</th>
+                                                            <th scope="col">Parking Slot</th>
+                                                            <th scope="col">Duration</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @foreach ($bookings as $booking)
+                                                            <tr>
+                                                                <td>{{ $booking->vehicle_number }}</td>
+                                                                <td>{{ $booking->parking_slot }}</td>
+                                                                <td>{{ date('h\H i\m', strtotime($booking->duration)) }}</td>
+                                                            </tr>
+                                                        @endforeach
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        @endisset
+                                        @if (!isset($bookings))
+                                            <div class="alert text-center mt-5">
+                                                No Reserves Slots
+                                            </div>
+                                        @endif
+                                        <!-----BookingseEnd---->
                                     </div>
                                 </div>
                             </div>
