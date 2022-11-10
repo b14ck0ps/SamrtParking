@@ -44,6 +44,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin', function () {
         return view('dashboards.admin');
     })->name('admin');
+    Route::delete('/customers/delete/{id}', [CustomerController::class, 'delete'])->name('customers.delete');
 });
 Route::middleware(['auth', 'customer'])->group(function () {
     Route::get('/park', [BookingsController::class, 'index'])->name('park');
