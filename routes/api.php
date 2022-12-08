@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\CustomerController;
+use App\Http\Controllers\Api\CustomerProfileController;
 use App\Http\Controllers\Api\LoginController;
 use App\Http\Controllers\Api\RegistrationController;
 use Illuminate\Http\Request;
@@ -26,3 +27,4 @@ Route::post('/login', [LoginController::class, 'login']);
 
 Route::get('/customers', [CustomerController::class, 'getAllCustomers']);
 Route::delete('/customer/{id}', [CustomerController::class, 'deleteCustomer']);
+Route::get('/customer/{id}/bookings', [CustomerProfileController::class, 'GetBookingsList']);
