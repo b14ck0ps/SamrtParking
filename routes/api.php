@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\CustomerController;
 use App\Http\Controllers\Api\LoginController;
 use App\Http\Controllers\Api\RegistrationController;
 use Illuminate\Http\Request;
@@ -22,3 +23,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/registration', [RegistrationController::class, 'registration']);
 Route::post('/login', [LoginController::class, 'login']);
+
+Route::get('/customers', [CustomerController::class, 'getAllCustomers']);
+Route::delete('/customer/{id}', [CustomerController::class, 'deleteCustomer']);
