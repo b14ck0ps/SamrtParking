@@ -27,7 +27,6 @@ class RegistrationController extends Controller
             'type' => $request->type,
             'password' => bcrypt($request->password),
         ]);
-
         return response()->json([
             'message' => 'Successfully created user!',
             'user' => $user,

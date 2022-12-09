@@ -19,6 +19,7 @@ class LoginController extends Controller
                 'message' => 'Invalid login details',
             ], 401);
         }
+        session()->put('user_type', auth()->user()->type);
         auth()->login(auth()->user());
         return response()->json([
             'status' => 'ok',

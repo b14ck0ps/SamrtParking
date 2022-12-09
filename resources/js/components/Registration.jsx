@@ -16,7 +16,7 @@ export default function Registration() {
     const handleSubmit = (e) => {
         e.preventDefault();
         const data = { name, vehicle_name, phone, email, type, password, password_confirmation };
-        axios.post('/registration', data)
+        axios.post('/api/registration', data)
             .then(res => {
                 type === 'admin' ? window.location = '/admin' : window.location = '/home'
             })
