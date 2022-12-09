@@ -11,7 +11,7 @@ export default function Park() {
     const handleSubmit = (e) => {
         e.preventDefault();
         const data = { vehicle_number, parking_slot, duration }
-        axios.post('/book', data).
+        axios.post('/api/book', data).
             then(res => {
                 window.location.href = '/home'
             })

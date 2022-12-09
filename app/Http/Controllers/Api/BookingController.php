@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\Models\Bookings;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Mail\BookedMailService;
+use Illuminate\Support\Facades\Mail;
 
 class BookingController extends Controller
 {
@@ -22,6 +24,7 @@ class BookingController extends Controller
             'user_id' => auth()->user()->id,
         ]);
         $booking->save();
+        Mail::to(auth()->user()->email)->send(new BookedMailService());
         return response()->json('Booking Successful');
     }
 }
