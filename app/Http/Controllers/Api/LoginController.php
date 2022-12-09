@@ -19,7 +19,7 @@ class LoginController extends Controller
                 'message' => 'Invalid login details',
             ], 401);
         }
-
+        auth()->login(auth()->user());
         return response()->json([
             'status' => 'ok',
             'user' => auth()->user(),

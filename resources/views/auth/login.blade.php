@@ -1,10 +1,11 @@
-@extends('layouts.app')
+@extends('ReactUI.layouts.app')
 @section('content')
-    <div class="container h-100 mt-5">
+    @csrf
+    <div id="login"></div>
+    {{-- <div class="container h-100 mt-5">
         <div class="row h-100 justify-content-center align-items-center  card p-5">
             <form class="col-6" method="POST" action="login">
                 @csrf
-                {{-- status --}}
                 @if (session('status'))
                     <div class="alert alert-danger">
                         {{ session('status') }}
@@ -30,5 +31,5 @@
                 <button type="submit" class="btn-primary">Sign in</button>
             </form>
         </div>
-    </div>
+    </div> --}}
 @endsection

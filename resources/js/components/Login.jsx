@@ -15,7 +15,7 @@ function Login() {
             .then(res => {
                 console.log(res.data)
                 if (res.data.user) {
-                    window.location = '/profile'
+                    window.location = '/home'
                 }
             }).catch(err => {
                 setErr(true)
