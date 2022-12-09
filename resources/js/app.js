@@ -15,3 +15,4 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./components/Login";
 import "./components/Registration";
+import "./components/Customer";

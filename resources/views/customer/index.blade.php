@@ -1,6 +1,7 @@
-@extends('layouts.app')
+@extends('ReactUI.layouts.app')
 @section('content')
-    <div class="container">
+    <div id="customerList"></div>
+    {{-- <div class="container">
         <div class="table-responsive">
             <h3 class="text-center my-5">List of Customers</h3>
             <table class="table">
@@ -35,5 +36,5 @@
                 </tbody>
             </table>
         </div>
-    </div>
+    </div> --}}
 @endsection
