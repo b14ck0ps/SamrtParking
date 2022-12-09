@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 
 class BookingController extends Controller
 {
-    public function book(Request $request, $id)
+    public function book(Request $request)
     {
         $request->validate([
             'parking_slot' => 'required',
@@ -19,7 +19,7 @@ class BookingController extends Controller
             'parking_slot' => $request->get('parking_slot'),
             'vehicle_number' => $request->get('vehicle_number'),
             'duration' => $request->get('duration'),
-            'user_id' => $id,
+            'user_id' => auth()->user()->id,
         ]);
         $booking->save();
         return response()->json('Booking Successful');

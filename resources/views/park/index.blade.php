@@ -1,5 +1,8 @@
-@extends('layouts.app')
+@extends('ReactUI.layouts.app')
 @section('content')
+    @csrf
+    <div id="park"></div>
+    {{--
     <script src="https://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.js"></script>
     <link href="https://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.css" rel="stylesheet" />
     <h3 class="text-center m-3">Book any of our parking services</h3>
@@ -60,4 +63,5 @@
 
         });
     </script>
+     --}}
 @endsection

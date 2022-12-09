@@ -26,7 +26,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/registration', [RegistrationController::class, 'registration']);
 Route::post('/login', [LoginController::class, 'login']);
-Route::post('/{id}/booking', [BookingController::class, 'book']);
+Route::post('/book', [BookingController::class, 'book']);
 Route::get('/customers', [CustomerController::class, 'getAllCustomers']);
 Route::delete('/customer/{id}', [CustomerController::class, 'deleteCustomer']);
 Route::get('/customer/{id}/bookings', [CustomerProfileController::class, 'GetBookingsList']);
