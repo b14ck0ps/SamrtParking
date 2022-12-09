@@ -23,6 +23,6 @@ class LoginController extends Controller
         return response()->json([
             'status' => 'ok',
             'user' => auth()->user(),
-        ]);
+        ], 200);
     }
 }
