@@ -10,3 +10,21 @@ Then open PowerShell and run
     php artisan serve
 
 \*If ask to create database when migrating, type `yes`
+
+For react
+
+    npm install
+    npm run dev
+
+For mailtrap
+
+make an account on mailtrap.io and get the Credentials
+
+    MAIL_DRIVER=smtp
+    MAIL_HOST=smtp.mailtrap.io
+    MAIL_PORT=2525
+    MAIL_USERNAME=your_username
+    MAIL_PASSWORD=your_password
+    MAIL_ENCRYPTION=null
+
+add this to .env file
