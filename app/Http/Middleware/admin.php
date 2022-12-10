@@ -19,6 +19,6 @@ class admin
         if (auth()->check() && auth()->user()->type == 'admin') {
             return $next($request);
         }
-        return redirect()->to('/home');
+        return redirect()->to('/admin');
     }
 }
