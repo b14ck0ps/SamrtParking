@@ -15,7 +15,7 @@ function Login() {
             .then(res => {
                 console.log(res.data)
                 if (res.data.user) {
-                    window.location = '/home'
+                    res.data.user.type === 'admin' ? window.location = '/admin' : window.location = '/home'
                 }
             }).catch(err => {
                 setErr(true)
